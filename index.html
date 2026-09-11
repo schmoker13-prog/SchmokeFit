@@ -8,20 +8,20 @@
     :root {
       --bg-color: #071318;
       --card-bg: #0d1f26;
-      --card-border: #163540;
-      --input-bg: #050d11;
-      --input-border: #142f38;
-      --accent-blue: #00f0ff; /* Vibrant Turquoise */
-      --accent-blue-dark: #00b8c4;
-      --accent-orange: #ff007f; /* Neon Pink */
-      --accent-orange-hover: #d6006b;
+      --card-border: #17333b;
+      --input-bg: #071318;
+      --input-border: #1b3a42;
+      --accent-blue: #00f0ff;
+      --accent-blue-dark: #00a8b8;
+      --accent-orange: #ff007f;
+      --accent-orange-hover: #d9006c;
       --accent-green: #10b981;
-      --text-main: #f0fdfa;
-      --text-muted: #80b3be;
-      --badge-key: #00b8c4;
-      --badge-standard: #1f3a44;
-      --badge-supp: #1f3a44;
-      --danger: #ff3366;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --badge-key: #00a8b8;
+      --badge-standard: #374151;
+      --badge-supp: #374151;
+      --danger: #ef4444;
     }
 
     * {
@@ -63,7 +63,7 @@
       background-color: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       text-align: center;
     }
 
@@ -72,8 +72,8 @@
       height: 140px;
       border-radius: 50%;
       padding: 4px;
-      background: linear-gradient(135deg, #00f0ff, #ff007f);
-      box-shadow: 0 0 25px rgba(255, 0, 127, 0.4);
+      background: linear-gradient(135deg, #00d2ff, #0066ff);
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
       margin-bottom: 20px;
     }
 
@@ -102,7 +102,7 @@
 
     .login-input:focus {
       border-color: var(--accent-blue);
-      box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+      box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
     }
 
     .error-msg {
@@ -127,22 +127,28 @@
       background-color: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 20px;
-      text-align: center;
+      padding: 12px 178px 12px 82px;
+      min-height: 76px;
+      text-align: left;
+      position: relative;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: flex-start;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
     .avatar-wrapper {
-      width: 90px;
-      height: 90px;
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      padding: 3px;
-      background: linear-gradient(135deg, #00f0ff, #ff007f);
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-      margin-bottom: 12px;
+      padding: 2px;
+      background: linear-gradient(135deg, #00d2ff, #0066ff);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
     }
 
     .avatar-img {
@@ -155,10 +161,11 @@
     }
 
     .brand-title {
-      font-size: 1.6rem;
+      font-size: 1.35rem;
       font-weight: 900;
       letter-spacing: 1px;
       color: #ffffff;
+      line-height: 1;
     }
 
     .brand-title span {
@@ -166,41 +173,93 @@
     }
 
     .brand-subtitle {
-      font-size: 0.8rem;
+      font-size: 0.67rem;
       font-weight: 800;
       color: var(--accent-orange);
-      letter-spacing: 1.5px;
-      margin-top: 2px;
+      letter-spacing: 1.2px;
+      margin-top: 4px;
+    }
+
+    .header-actions {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+      max-width: 165px;
+      flex-wrap: wrap;
     }
 
     .user-greeting {
-      font-size: 0.75rem;
-      font-weight: 700;
+      width: 100%;
+      text-align: right;
+      font-size: 0.62rem;
+      font-weight: 800;
       color: var(--text-muted);
-      margin-top: 6px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.7px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
+    .header-guide-btn,
     .logout-btn {
-      margin-top: 8px;
-      padding: 4px 10px;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--danger);
-      background-color: rgba(255, 51, 102, 0.1);
-      border: 1px solid rgba(255, 51, 102, 0.3);
+      margin: 0;
+      padding: 4px 7px;
+      font-size: 0.56rem;
+      font-weight: 900;
+      letter-spacing: 0.35px;
       border-radius: 6px;
       cursor: pointer;
       text-transform: uppercase;
       transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .header-guide-btn {
+      color: var(--accent-blue);
+      background-color: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.35);
+    }
+
+    .header-guide-btn:hover,
+    .header-guide-btn:active {
+      background-color: var(--accent-blue);
+      color: #ffffff;
+    }
+
+    .logout-btn {
+      color: var(--danger);
+      background-color: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
     }
 
     .logout-btn:hover,
     .logout-btn:active {
       background-color: var(--danger);
       color: #ffffff;
+    }
+
+    @media (max-width: 420px) {
+      .header-card {
+        padding-right: 148px;
+        padding-left: 72px;
+        min-height: 70px;
+      }
+      .avatar-wrapper {
+        left: 10px;
+        width: 50px;
+        height: 50px;
+      }
+      .brand-title { font-size: 1.13rem; }
+      .brand-subtitle { font-size: 0.57rem; letter-spacing: .8px; }
+      .header-actions { max-width: 140px; right: 8px; top: 8px; gap: 4px; }
+      .header-guide-btn,
+      .logout-btn { font-size: .51rem; padding: 4px 6px; }
+      .user-greeting { font-size: .56rem; }
     }
 
     /* NAVIGATION TABS */
@@ -229,9 +288,9 @@
     }
 
     .tab-btn.active {
-      background-color: var(--accent-orange);
+      background-color: var(--accent-blue);
       color: #ffffff;
-      box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
     }
 
     /* SECTION HEADER */
@@ -268,7 +327,7 @@
 
     /* WEEK TRACKER CARD */
     .week-tracker-card {
-      background-color: #09181f;
+      background-color: #0e172a;
       border: 1px solid var(--accent-blue);
       border-radius: 12px;
       padding: 14px;
@@ -293,7 +352,7 @@
       font-size: 0.65rem;
       font-weight: 800;
       color: var(--accent-orange);
-      background-color: rgba(255, 0, 127, 0.15);
+      background-color: rgba(245, 158, 11, 0.15);
       padding: 4px 8px;
       border-radius: 6px;
       border: 1px solid var(--accent-orange);
@@ -323,13 +382,13 @@
 
     /* INFO CALLOUT CARD */
     .info-card {
-      background-color: #09171e;
-      border: 1px solid #142f38;
+      background-color: #0f172a;
+      border: 1px solid #1b3a42;
       border-radius: 10px;
       padding: 12px;
       font-size: 0.78rem;
       line-height: 1.4;
-      color: #80b3be;
+      color: #94a3b8;
     }
 
     .info-card strong {
@@ -390,7 +449,7 @@
 
     .btn-orange {
       background-color: var(--accent-orange);
-      color: #fff;
+      color: #000;
     }
 
     .btn-orange:active {
@@ -398,17 +457,16 @@
     }
 
     .btn-dark {
-      background-color: #142f38;
+      background-color: #1b3a42;
       color: var(--text-main);
     }
 
     .btn-blue {
       background-color: var(--accent-blue);
-      color: #000000;
+      color: #ffffff;
       width: 100%;
       padding: 12px;
       font-size: 0.85rem;
-      font-weight: 900;
       margin-top: 8px;
       box-shadow: 0 4px 12px rgba(0, 240, 255, 0.3);
     }
@@ -433,7 +491,7 @@
 
     .btn-danger-sm {
       background-color: transparent;
-      border: 1px solid rgba(255, 51, 102, 0.3);
+      border: 1px solid rgba(239, 68, 68, 0.3);
       color: var(--danger);
       font-size: 0.6rem;
       padding: 3px 6px;
@@ -492,8 +550,7 @@
 
     .phase-toggle-btn.active {
       background-color: var(--accent-blue);
-      color: #000000;
-      font-weight: 900;
+      color: #ffffff;
       box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
     }
 
@@ -546,13 +603,13 @@
     }
 
     .badge-key {
-      background-color: var(--accent-orange);
+      background-color: var(--badge-key);
       color: #fff;
     }
 
     .badge-standard, .badge-supp, .badge-optional, .badge-superset, .badge-custom {
       background-color: var(--badge-standard);
-      color: var(--text-muted);
+      color: #9ca3af;
     }
 
     .set-row {
@@ -605,13 +662,13 @@
     }
 
     .set-input::placeholder {
-      color: #43636e;
+      color: #4b5563;
       font-size: 0.7rem;
     }
 
     /* MACRO CALCULATOR */
     .macro-display-box {
-      background-color: #08161d;
+      background-color: #0b2026;
       border: 1px dashed var(--accent-blue);
       border-radius: 10px;
       padding: 14px;
@@ -658,7 +715,7 @@
 
     .habit-item input[type="checkbox"] {
       margin-top: 2px;
-      accent-color: var(--accent-orange);
+      accent-color: var(--accent-blue);
       width: 16px;
       height: 16px;
     }
@@ -701,7 +758,7 @@
       margin-top: 10px;
     }
     .nutrition-stat {
-      background:#08161d;
+      background:#0b2026;
       border:1px solid var(--input-border);
       border-radius:10px;
       padding:10px;
@@ -710,30 +767,41 @@
     .nutrition-stat-value { font-size:1.05rem; font-weight:900; color:#fff; }
     .nutrition-stat-label { font-size:.6rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.5px; margin-top:2px; }
     .macro-progress-wrap { margin-top:10px; }
-    .macro-progress-row { display:flex; justify-content:space-between; gap:8px; font-size:.7rem; margin-bottom:4px; }
-    .macro-progress-track { height:8px; border-radius:999px; background:#050d11; overflow:hidden; border:1px solid #142f38; }
+    .macro-progress-row { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:.7rem; margin-bottom:4px; }
+    .macro-progress-label { font-weight:800; color:#fff; }
+    .macro-progress-numbers { text-align:right; font-size:.64rem; color:var(--text-muted); white-space:nowrap; }
+    .macro-progress-numbers strong { color:var(--accent-blue); font-weight:900; }
+    .macro-progress-track { height:8px; border-radius:999px; background:#071318; overflow:hidden; border:1px solid #1b3a42; }
     .macro-progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--accent-blue),#34d399); transition:width .25s ease; }
-    .meal-section { border-top:1px solid #142f38; padding-top:10px; margin-top:10px; }
+    .meal-section { border-top:1px solid #1b3a42; padding-top:10px; margin-top:10px; }
     .meal-header { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px; }
     .meal-title { font-size:.72rem; font-weight:900; color:var(--accent-orange); letter-spacing:.5px; }
     .meal-add-btn { border:1px solid var(--accent-blue); background:transparent; color:var(--accent-blue); border-radius:6px; padding:5px 8px; font-size:.62rem; font-weight:800; cursor:pointer; }
-    .food-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:8px; align-items:center; padding:7px 0; border-bottom:1px solid rgba(255,255,255,.04); }
+    .food-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:8px; align-items:center; padding:8px 5px; border-bottom:1px solid rgba(255,255,255,.04); border-radius:7px; cursor:pointer; transition:background .18s ease, border-color .18s ease; }
+    .food-row:hover, .food-row:active { background:rgba(0,240,255,.07); }
     .food-name { font-size:.72rem; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
     .food-macros { font-size:.62rem; color:var(--text-muted); }
+    .food-amount { font-size:.62rem; color:var(--accent-blue); font-weight:800; white-space:nowrap; }
+    .food-edit-hint { font-size:.52rem; color:#64748b; margin-top:2px; }
     .food-remove { border:none; background:transparent; color:var(--danger); cursor:pointer; font-size:.8rem; padding:4px; }
     .nutrition-search-panel { display:none; margin-top:10px; padding-top:10px; border-top:1px dashed var(--input-border); }
     .nutrition-search-panel.open { display:block; }
     .nutrition-search-row { display:flex; gap:6px; }
     .nutrition-search-row input { flex:1; min-width:0; }
     .search-results { display:flex; flex-direction:column; gap:6px; margin-top:8px; }
-    .search-result { background:#08161d; border:1px solid var(--input-border); border-radius:8px; padding:9px; }
+    .search-result { background:#0b2026; border:1px solid var(--input-border); border-radius:8px; padding:9px; }
     .search-result-top { display:flex; justify-content:space-between; gap:8px; align-items:flex-start; }
     .search-result-name { font-size:.72rem; font-weight:800; line-height:1.25; }
     .search-result-meta { font-size:.62rem; color:var(--text-muted); margin-top:3px; }
-    .search-result-controls { display:grid; grid-template-columns:90px 1fr; gap:6px; margin-top:7px; }
-    .search-result-controls input { width:100%; }
+    .search-result-controls { display:grid; grid-template-columns:78px 94px minmax(0,1fr); gap:6px; margin-top:7px; align-items:center; }
+    .search-result-controls input,
+    .search-result-controls select { width:100%; min-width:0; }
+    @media (max-width:390px) {
+      .search-result-controls { grid-template-columns:72px 88px minmax(0,1fr); gap:5px; }
+      .search-result-controls .btn { padding-left:7px !important; padding-right:7px !important; font-size:.58rem; }
+    }
     .nutrition-empty { font-size:.68rem; color:var(--text-muted); padding:6px 0; }
-    .nutrition-note { font-size:.62rem; color:#5f8e98; margin-top:8px; line-height:1.35; }
+    .nutrition-note { font-size:.62rem; color:#64748b; margin-top:8px; line-height:1.35; }
 
     /* BARCODE SCANNER + MANUAL FOOD FALLBACK */
     .nutrition-action-row {
@@ -747,7 +815,7 @@
       display:none;
       margin-top:10px;
       padding:10px;
-      background:#08161d;
+      background:#0b2026;
       border:1px solid var(--input-border);
       border-radius:10px;
     }
@@ -758,8 +826,8 @@
       min-height:220px;
       overflow:hidden;
       border-radius:8px;
-      background:#03090c;
-      border:1px solid #142f38;
+      background:#050913;
+      border:1px solid #1b3a42;
       margin-top:8px;
     }
     .barcode-status {
@@ -804,6 +872,214 @@
       vertical-align:middle;
     }
 
+
+    /* TRAINING FOCUS SELECTOR */
+    .focus-card { border:1px solid var(--accent-blue); background:#0b2026; }
+    .focus-toggle-container { display:grid; grid-template-columns:repeat(4,1fr); gap:5px; margin-top:8px; }
+    .focus-toggle-btn { background:transparent; border:1px solid var(--input-border); color:var(--text-muted); padding:8px 4px; border-radius:7px; font-size:.62rem; font-weight:900; letter-spacing:.4px; cursor:pointer; text-transform:uppercase; }
+    .focus-toggle-btn.active { background:var(--accent-blue); color:#00111a; border-color:var(--accent-blue); box-shadow:0 0 10px rgba(0,240,255,.28); }
+    .focus-active-text { margin-top:8px; font-size:.68rem; color:var(--text-muted); line-height:1.4; }
+    .focus-active-text strong { color:var(--accent-orange); }
+
+
+    /* 18-WEEK PROGRAM RESET PROMPT */
+    .program-reset-overlay {
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      background:rgba(3,8,18,.88);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+    }
+    .program-reset-overlay.open { display:flex; }
+    .program-reset-card {
+      width:100%;
+      max-width:430px;
+      background:var(--card-bg);
+      border:1px solid var(--accent-blue);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 18px 50px rgba(0,0,0,.55), 0 0 22px rgba(0,240,255,.16);
+      text-align:center;
+    }
+    .program-reset-kicker {
+      font-size:.65rem;
+      font-weight:900;
+      letter-spacing:1px;
+      color:var(--accent-orange);
+      text-transform:uppercase;
+      margin-bottom:5px;
+    }
+    .program-reset-title {
+      font-size:1.15rem;
+      font-weight:900;
+      color:#fff;
+      margin-bottom:8px;
+    }
+    .program-reset-copy {
+      font-size:.73rem;
+      color:var(--text-muted);
+      line-height:1.45;
+      margin-bottom:12px;
+    }
+    .program-reset-focus-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-top:10px;
+    }
+    .program-reset-focus-btn {
+      border:1px solid var(--input-border);
+      background:var(--input-bg);
+      color:var(--text-main);
+      border-radius:8px;
+      padding:10px 6px;
+      font-size:.7rem;
+      font-weight:900;
+      cursor:pointer;
+      text-transform:uppercase;
+    }
+    .program-reset-focus-btn.current {
+      border-color:var(--accent-blue);
+      color:var(--accent-blue);
+      box-shadow:0 0 8px rgba(0,240,255,.18);
+    }
+
+
+    /* WEEKLY NUTRITION HISTORY */
+    .nutrition-history-controls {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      margin-bottom:10px;
+    }
+    .nutrition-week-label {
+      flex:1;
+      text-align:center;
+      font-size:.72rem;
+      font-weight:900;
+      color:var(--accent-blue);
+      line-height:1.25;
+    }
+    .nutrition-chart-card {
+      padding:12px;
+      overflow:hidden;
+    }
+    .nutrition-chart-title {
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:8px;
+      margin-bottom:10px;
+    }
+    .nutrition-chart-title strong {
+      font-size:.75rem;
+      color:#fff;
+    }
+    .nutrition-chart-title span {
+      font-size:.58rem;
+      color:var(--text-muted);
+    }
+    .weekly-bar-chart {
+      height:210px;
+      display:grid;
+      grid-template-columns:repeat(7, minmax(0,1fr));
+      align-items:end;
+      gap:6px;
+      border-bottom:1px solid #263247;
+      padding:14px 2px 0;
+      position:relative;
+    }
+    .weekly-bar-col {
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      align-items:center;
+      min-width:0;
+    }
+    .weekly-bar-value {
+      font-size:.52rem;
+      color:var(--text-muted);
+      margin-bottom:4px;
+      min-height:12px;
+      text-align:center;
+      white-space:nowrap;
+    }
+    .weekly-bar-track {
+      width:72%;
+      max-width:34px;
+      height:150px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      background:#071318;
+      border:1px solid #1b3a42;
+      border-radius:5px 5px 0 0;
+      overflow:hidden;
+    }
+    .weekly-bar-fill {
+      width:100%;
+      min-height:0;
+      background:linear-gradient(180deg,var(--accent-blue),#2563eb);
+      border-radius:4px 4px 0 0;
+      transition:height .25s ease;
+    }
+    .weekly-bar-fill.protein {
+      background:linear-gradient(180deg,var(--accent-orange),#f97316);
+    }
+    .weekly-bar-day {
+      margin-top:5px;
+      font-size:.55rem;
+      font-weight:800;
+      color:#cbd5e1;
+      text-transform:uppercase;
+    }
+    .weekly-bar-date {
+      font-size:.48rem;
+      color:#64748b;
+      margin-top:1px;
+    }
+    .nutrition-history-note {
+      font-size:.62rem;
+      color:var(--text-muted);
+      line-height:1.4;
+      margin-top:8px;
+    }
+
+
+    /* EDIT LOGGED FOOD */
+    .food-edit-overlay {
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:10010;
+      background:rgba(3,8,18,.86);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+    }
+    .food-edit-overlay.open { display:flex; }
+    .food-edit-card {
+      width:100%;
+      max-width:380px;
+      background:var(--card-bg);
+      border:1px solid var(--accent-blue);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 18px 50px rgba(0,0,0,.55);
+    }
+    .food-edit-title { font-size:.9rem; font-weight:900; color:#fff; margin-bottom:3px; }
+    .food-edit-sub { font-size:.62rem; color:var(--text-muted); margin-bottom:12px; line-height:1.4; }
+    .food-edit-actions { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin-top:10px; }
+
   </style>
     <!-- iPhone / iPad -->
 <link rel="apple-touch-icon" href="bahama-icon.png">
@@ -815,7 +1091,7 @@
 <link rel="manifest" href="manifest.json">
 
 <!-- App appearance -->
-<meta name="theme-color" content="#071318">
+<meta name="theme-color" content="#071426">
 
 <!-- iPhone standalone mode -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -859,70 +1135,80 @@
       </div>
       <div class="brand-title">SCHMOKE<span>FIT</span></div>
       <div class="brand-subtitle">BAHAMA MAMA PROTOCOL</div>
-      <div class="user-greeting" id="headerUserGreeting">ATHLETE</div>
-      <button class="logout-btn" onclick="handleLogout()">LOG OUT</button>
+
+      <div class="header-actions">
+        <div class="user-greeting" id="headerUserGreeting">ATHLETE</div>
+        <button class="header-guide-btn" onclick="switchTab('introTab', null)">INTRO</button>
+        <button class="logout-btn" onclick="handleLogout()">LOG OUT</button>
+      </div>
     </div>
 
     <!-- TABS NAVIGATION -->
     <div class="nav-tabs">
-      <button class="tab-btn active" id="tabBtn-introTab" onclick="switchTab('introTab', this)">INTRO</button>
       <button class="tab-btn" id="tabBtn-workoutTab" onclick="switchTab('workoutTab', this)">WORKOUT</button>
       <button class="tab-btn" id="tabBtn-historyTab" onclick="switchTab('historyTab', this)">HISTORY</button>
       <button class="tab-btn" id="tabBtn-macrosTab" onclick="switchTab('macrosTab', this)">MACROS</button>
+      <button class="tab-btn" id="tabBtn-nutritionHistoryTab" onclick="switchTab('nutritionHistoryTab', this)">NUTRITION</button>
       <button class="tab-btn" id="tabBtn-tipsTab" onclick="switchTab('tipsTab', this)">TIPS</button>
     </div>
 
     <!-- 00. INTRO TAB -->
     <div id="introTab" class="tab-content active">
       <div class="section-title-banner">00. BAHAMA MAMA PROTOCOL</div>
-      
-      <!-- MINIMALIST GUIDE -->
+
       <div class="card info-card">
         <div class="info-subtitle">THE FEMALE SCULPT GUIDE</div>
-        <p>Tailored specifically for full-body toning, glute development, and core stability, this protocol focuses on maximum efficiency, sculpt-focused key movements, and flexible nutrition without endless cardio.</p>
+        <p>Built for efficient full-body training with an emphasis on glutes, legs, posture, core strength, and feeling athletic. The goal is a sustainable program that can adapt to how and where you want to train.</p>
       </div>
 
-      <!-- TRAINING BLUEPRINT -->
       <div class="card info-card">
         <div class="info-subtitle">01. TRAINING BLUEPRINT</div>
-        <p style="margin-bottom: 8px;"><strong>PHILOSOPHY:</strong> 3 full-body sessions per week, targeting glutes, upper body posture, legs, and core. Rest 1 full day between workouts for ultimate recovery.</p>
-        <p style="margin-bottom: 6px;"><strong>REVERSE PYRAMID / PYRAMID TRAINING:</strong></p>
-        <ul style="margin-left: 16px; margin-bottom: 8px;">
-          <li><strong>Set 1 (Heavy/Top Set):</strong> Target 8–10 reps (Challenging Weight).</li>
-          <li><strong>Set 2 (Medium):</strong> Drop weight ~10%, target 10–12 reps.</li>
-          <li><strong>Set 3 (Light/Burnout):</strong> Drop weight another ~10%, target 12–15 reps.</li>
-          <li><strong>Rest Period:</strong> Rest 2 minutes between main sets; 60–90 seconds for supersets.</li>
+        <p style="margin-bottom:8px;"><strong>PHILOSOPHY:</strong> 3 full-body sessions per week with a full recovery day between workouts whenever possible.</p>
+        <p style="margin-bottom:6px;"><strong>REVERSE PYRAMID / PYRAMID TRAINING:</strong></p>
+        <ul style="margin-left:16px; margin-bottom:8px;">
+          <li><strong>Set 1:</strong> Challenging weight for roughly 8–10 reps.</li>
+          <li><strong>Set 2:</strong> Reduce the load slightly and target 10–12 reps.</li>
+          <li><strong>Set 3:</strong> Reduce again and target 12–15 reps.</li>
+          <li><strong>Rest:</strong> About 2 minutes for main lifts and 60–90 seconds for smaller movements.</li>
         </ul>
-        <p>⏱️ <strong>TIME CRUNCH RULE:</strong> Short on time? Complete the Key Glute & Upper Body lifts for the day and skip optional isolation work.</p>
+        <p>⏱️ <strong>TIME CRUNCH:</strong> Prioritize the key lifts and skip optional isolation work when needed.</p>
       </div>
 
-      <!-- NUTRITION BLUEPRINT -->
       <div class="card info-card">
-        <div class="info-subtitle">02. FEMALE NUTRITION BLUEPRINT</div>
-        <p style="margin-bottom: 8px;">Sculpting lean muscle while staying lean comes down to <strong>Calories</strong> and adequate <strong>Protein</strong>.</p>
-        <p style="margin-bottom: 4px;">• <strong>Daily Calorie Target (Fat Loss):</strong> Bodyweight (lbs) × 12</p>
-        <p style="margin-bottom: 8px;">• <strong>Daily Protein Target:</strong> Bodyweight (lbs) × 0.75g – 0.82g</p>
-        <p style="font-size:0.72rem; color:#80b3be; margin-bottom:10px;">*Note: Use target bodyweight if leaning down significantly.</p>
-        <p><strong>TRACKING & FLEXIBLE EATING:</strong></p>
-        <ul style="margin-left: 16px; margin-top: 4px;">
-          <li><strong>Tracking App:</strong> Log meals using Cronometer, MyFitnessPal, or Lose It!.</li>
-          <li><strong>Hydration First:</strong> Aim for 2.5–3 liters of water daily for skin health and recovery.</li>
-          <li><strong>Flexible Nutrition:</strong> Enjoy balanced meals without extreme restriction. 80% whole foods, 20% fun foods!</li>
-        </ul>
+        <div class="info-subtitle">02. CHOOSE YOUR TRAINING STYLE</div>
+        <p style="margin-bottom:8px;">The core Bahama Mama structure stays simple, but you can choose the version that best matches your goal and equipment.</p>
+        <p style="margin-bottom:5px;"><strong>TONE & TIGHTEN:</strong> The original Bahama Mama workouts exactly as designed. This is the default.</p>
+        <p style="margin-bottom:5px;"><strong>BUILD MUSCLE:</strong> Keeps the original exercises and adds one extra volume movement each day.</p>
+        <p style="margin-bottom:8px;"><strong>HOME / BODYWEIGHT:</strong> Uses bodyweight, resistance bands, and light dumbbells so the entire program can be done at home.</p>
+        <p style="font-size:.72rem; color:var(--text-muted);">You can switch styles anytime from the Workout tab.</p>
       </div>
 
-      <!-- PHASE PROGRESSION -->
       <div class="card info-card">
-        <div class="info-subtitle">03. PHASE PROGRESSION</div>
-        <p style="margin-bottom: 8px;">• <strong>Weeks 1–10 (Tone & Trim Deficit):</strong> Maintain a modest caloric deficit while building target muscle groups.</p>
-        <p style="margin-bottom: 8px;">• <strong>Weeks 11–18 (Body Recomp):</strong> Slowly add 150 calories daily to shift into maintenance/toning phase.</p>
-        <p>• <strong>Reset & Repeat:</strong> Recalculate macros at your new target weight and continue progressing!</p>
+        <div class="info-subtitle">03. THE 18-WEEK RESET</div>
+        <p style="margin-bottom:8px;"><strong>TRAIN IN BLOCKS:</strong> Bahama Mama is designed as an 18-week cycle instead of one routine you repeat forever.</p>
+        <p style="margin-bottom:8px;">After you complete <strong>Week 18</strong>, the app asks whether you want to keep your current style or choose <strong>Tone & Tighten, Build Muscle, or Home / Bodyweight.</strong></p>
+        <p style="margin-bottom:8px;">After your choice, the week counter resets to <strong>Week 1</strong> for a fresh 18-week block.</p>
+        <p style="font-size:.72rem; color:var(--text-muted);"><strong>WHY RESET?</strong> It gives you a clear finish line and a natural time to reassess your goals, equipment, and training style.</p>
       </div>
 
-      <!-- RECOVERY NOTE -->
+      <div class="card info-card">
+        <div class="info-subtitle">04. FEMALE NUTRITION BLUEPRINT</div>
+        <p style="margin-bottom:8px;">Body composition still comes down largely to consistent calories, adequate protein, and a plan you can sustain.</p>
+        <p style="margin-bottom:4px;">• <strong>Fat Loss Target:</strong> Bodyweight (lbs) × 12</p>
+        <p style="margin-bottom:8px;">• <strong>Protein Target:</strong> About bodyweight (lbs) × 0.8g</p>
+        <p style="font-size:.72rem; color:var(--text-muted);">Use the Macros tab to calculate targets and log food directly inside the app.</p>
+      </div>
+
+      <div class="card info-card">
+        <div class="info-subtitle">05. PHASE PROGRESSION</div>
+        <p style="margin-bottom:8px;">• <strong>Weeks 1–10 — Tone & Trim:</strong> Use the nutrition goal that matches your current objective while progressing the workouts.</p>
+        <p style="margin-bottom:8px;">• <strong>Weeks 11–18 — Body Recomp:</strong> Continue progressing while adjusting calories toward maintenance when appropriate.</p>
+        <p>• <strong>Week 18 Reset:</strong> Choose your next training style, return to Week 1, and recalculate macros if your goal or bodyweight changed.</p>
+      </div>
+
       <div class="card info-card">
         <div class="info-subtitle">OFF DAYS & RECOVERY</div>
-        <p>Recovery is where shape and curves are built. Enjoy active recovery like light walking, mobility, or relaxing on rest days.</p>
+        <p>Use rest days for recovery, walking, mobility, or other light activity that leaves you ready for the next training session.</p>
       </div>
     </div>
 
@@ -934,7 +1220,7 @@
       <div class="week-tracker-card">
         <div class="week-tracker-header">
           <div class="week-title" id="weekDisplayTitle">WEEK 1</div>
-          <div class="phase-badge" id="phaseDisplayBadge">PHASE 1: TONE & TRIM DEFICIT</div>
+          <div class="phase-badge" id="phaseDisplayBadge">PHASE 1: TONE & TRIM</div>
         </div>
         <div class="week-progress-text" id="weekProgressSubtext">Workouts Logged This Week: 0 / 3</div>
         <div class="week-controls">
@@ -943,8 +1229,18 @@
         </div>
       </div>
 
+      <div class="card focus-card">
+        <div style="font-size:0.75rem; font-weight:900; color:var(--accent-blue);">TRAINING STYLE</div>
+        <div class="focus-toggle-container" style="grid-template-columns:repeat(3,1fr);">
+          <button class="focus-toggle-btn active" id="focusBtn-tone" onclick="setTrainingFocus('tone', this)">TONE & TIGHTEN</button>
+          <button class="focus-toggle-btn" id="focusBtn-muscle" onclick="setTrainingFocus('muscle', this)">BUILD MUSCLE</button>
+          <button class="focus-toggle-btn" id="focusBtn-home" onclick="setTrainingFocus('home', this)">HOME / BODYWEIGHT</button>
+        </div>
+        <div class="focus-active-text" id="focusActiveText"><strong>TONE & TIGHTEN ACTIVE</strong> — the original Bahama Mama workout exactly as designed.</div>
+      </div>
+
       <div class="info-card">
-        💡 <strong>CUSTOMIZE WORKOUT:</strong> Tap any exercise title to swap movements, or use <strong>+ ADD EXERCISE</strong> below to expand your routine.
+        💡 <strong>CUSTOMIZE WORKOUT:</strong> Tap any exercise title to swap movements, or use <strong>+ ADD EXERCISE</strong> below to expand your workout.
       </div>
 
       <!-- TOP TIMER ANCHOR -->
@@ -952,7 +1248,7 @@
         <!-- REST TIMER -->
         <div class="card timer-card" id="mainRestTimer">
           <div class="timer-title">⏱️ REST TIMER</div>
-          <div class="timer-display" id="timerDisplay">02:00</div>
+          <div class="timer-display" id="timerDisplay">02:30</div>
           <div class="timer-controls">
             <button class="btn btn-dark" style="flex:0.6;" onclick="adjustTimer(-30)">-30s</button>
             <button class="btn btn-orange" onclick="startTimer()">START REST</button>
@@ -966,7 +1262,7 @@
       <div style="margin-top: 4px;">
         <label class="select-label">SELECT WORKOUT DAY:</label>
         <select class="custom-select" id="workoutDaySelect" onchange="loadWorkoutDay()">
-          <option value="monday">Monday: Glute Focus & Shoulders</option>
+          <option value="monday">Monday: Glutes, Legs & Shoulders</option>
           <option value="wednesday">Wednesday: Quads, Core & Back</option>
           <option value="friday">Friday: Hamstrings, Glutes & Arms</option>
         </select>
@@ -1006,7 +1302,7 @@
         <div class="macro-display-box">
           <div class="macro-sublabel" id="calorieTargetSublabel">DAILY CALORIE DEFICIT TARGET</div>
           <div class="macro-val" id="calorieTargetVal">1,620 kcal</div>
-          <div style="border-bottom:1px dashed #1e293b; margin:8px 0;"></div>
+          <div style="border-bottom:1px dashed #1b3a42; margin:8px 0;"></div>
           <div class="macro-sublabel">DAILY PROTEIN TARGET</div>
           <div class="macro-val protein" id="proteinTargetVal">108 g</div>
         </div>
@@ -1022,9 +1318,15 @@
         </div>
 
         <div class="macro-progress-wrap">
-          <div class="macro-progress-row"><span>Calories</span><span id="calorieRemainingText">2,340 remaining</span></div>
+          <div class="macro-progress-row">
+            <span class="macro-progress-label">Calories</span>
+            <span class="macro-progress-numbers"><strong id="calorieConsumedText">0 consumed</strong> • <span id="calorieRemainingText">1,620 remaining</span></span>
+          </div>
           <div class="macro-progress-track"><div class="macro-progress-fill" id="calorieProgressFill"></div></div>
-          <div class="macro-progress-row" style="margin-top:8px;"><span>Protein</span><span id="proteinRemainingText">148g remaining</span></div>
+          <div class="macro-progress-row" style="margin-top:8px;">
+            <span class="macro-progress-label">Protein</span>
+            <span class="macro-progress-numbers"><strong id="proteinConsumedText">0g consumed</strong> • <span id="proteinRemainingText">108g remaining</span></span>
+          </div>
           <div class="macro-progress-track"><div class="macro-progress-fill" id="proteinProgressFill"></div></div>
         </div>
 
@@ -1062,8 +1364,14 @@
                 <input id="manualFoodCalories" class="custom-select" type="number" min="0" step="1" placeholder="200">
               </div>
               <div>
-                <label for="manualFoodServing">Serving (g)</label>
-                <input id="manualFoodServing" class="custom-select" type="number" min="1" step="1" value="100">
+                <label for="manualFoodServing">Amount</label>
+                <div style="display:grid; grid-template-columns:1fr 88px; gap:5px;">
+                  <input id="manualFoodServing" class="custom-select" type="number" min="0.01" step="0.01" value="100">
+                  <select id="manualFoodUnit" class="custom-select">
+                    <option value="g">grams</option>
+                    <option value="oz">ounces</option>
+                  </select>
+                </div>
               </div>
               <div>
                 <label for="manualFoodProtein">Protein (g)</label>
@@ -1095,37 +1403,116 @@
       </div>
     </div>
 
-    <!-- 04. PROGRESS TIPS TAB -->
+    <!-- 04. NUTRITION HISTORY TAB -->
+    <div id="nutritionHistoryTab" class="tab-content">
+      <div class="section-title-banner">04. WEEKLY NUTRITION HISTORY</div>
+
+      <div class="card">
+        <div class="nutrition-history-controls">
+          <button class="btn-sm btn-dark" onclick="changeNutritionHistoryWeek(-1)">← PREV</button>
+          <div class="nutrition-week-label" id="nutritionHistoryWeekLabel">THIS WEEK</div>
+          <button class="btn-sm btn-dark" id="nutritionHistoryNextBtn" onclick="changeNutritionHistoryWeek(1)">NEXT →</button>
+        </div>
+        <div class="nutrition-history-note">
+          Your daily food log is saved automatically on this device. Previous days are also added to History automatically, so you do not have to remember to press “Save Today.”
+        </div>
+      </div>
+
+      <div class="card nutrition-chart-card">
+        <div class="nutrition-chart-title">
+          <strong>DAILY CALORIES</strong>
+          <span>logged kcal</span>
+        </div>
+        <div class="weekly-bar-chart" id="calorieWeeklyChart"></div>
+      </div>
+
+      <div class="card nutrition-chart-card">
+        <div class="nutrition-chart-title">
+          <strong>DAILY PROTEIN</strong>
+          <span>logged grams</span>
+        </div>
+        <div class="weekly-bar-chart" id="proteinWeeklyChart"></div>
+      </div>
+    </div>
+
+    <!-- 05. PROGRESS TIPS TAB -->
     <div id="tipsTab" class="tab-content">
-      <div class="section-title-banner">04. KEY TIPS & DAILY HABITS</div>
+      <div class="section-title-banner">05. KEY TIPS & DAILY HABITS</div>
 
       <div class="habit-list">
         <div class="habit-item">
           <input type="checkbox">
-          <div>💧 <strong>Hydration Boost:</strong> Drank at least 80–100 oz of water today.</div>
+          <div>💧 <strong>Morning Hydration:</strong> Drank 1–2 glasses of water upon waking.</div>
         </div>
         <div class="habit-item">
           <input type="checkbox">
-          <div>🍑 <strong>Glute Mind-Muscle Connection:</strong> Squeezed and engaged glutes on every rep.</div>
+          <div>🥗 <strong>Protein Anchor:</strong> Included a meaningful protein source in meals today.</div>
         </div>
         <div class="habit-item">
           <input type="checkbox">
-          <div>🥗 <strong>Protein with Every Meal:</strong> Hit 25–35g protein per main meal.</div>
+          <div>🚶‍♀️ <strong>Daily Movement:</strong> Got in a walk or other light activity outside the workout.</div>
         </div>
         <div class="habit-item">
           <input type="checkbox">
-          <div>🚶‍♀️ <strong>Daily Steps:</strong> Reached 8,000–10,000 steps for active recovery.</div>
+          <div>🎯 <strong>Sauce & Condiment Tracking:</strong> Logged all sauces, oils, and dressings.</div>
         </div>
         <div class="habit-item">
           <input type="checkbox">
-          <div>😴 <strong>Quality Sleep:</strong> Aimed for 7–8 hours of sound sleep for recovery.</div>
+          <div>🔥 <strong>High Training Intensity:</strong> Took sets to or near failure.</div>
         </div>
       </div>
     </div>
 
   </div>
 
+
+  <!-- EDIT LOGGED FOOD -->
+  <div class="food-edit-overlay" id="foodEditOverlay" onclick="closeFoodEditIfBackdrop(event)">
+    <div class="food-edit-card">
+      <div class="food-edit-title" id="foodEditTitle">EDIT FOOD</div>
+      <div class="food-edit-sub" id="foodEditSummary">Update the amount you ate and the nutrition will recalculate automatically.</div>
+
+      <label class="select-label" for="foodEditAmount">AMOUNT</label>
+      <div style="display:grid; grid-template-columns:1fr 120px; gap:7px;">
+        <input type="number" min="0.01" step="0.01" id="foodEditAmount" class="custom-select" value="100">
+        <select id="foodEditUnit" class="custom-select" onchange="updateFoodEditPreview()">
+          <option value="g">grams</option>
+          <option value="oz">ounces</option>
+          <option value="serving">serving</option>
+        </select>
+      </div>
+
+      <div class="food-edit-sub" id="foodEditServingNote" style="margin-top:6px;"></div>
+      <div class="food-edit-sub" id="foodEditPreview" style="margin-top:8px;"></div>
+
+      <div class="food-edit-actions">
+        <button class="btn btn-dark" style="margin:0;" onclick="closeFoodEdit()">CANCEL</button>
+        <button class="btn btn-blue" style="margin:0;" onclick="saveFoodEdit()">UPDATE FOOD</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- END OF 18-WEEK PROGRAM RESET -->
+  <div class="program-reset-overlay" id="programResetOverlay">
+    <div class="program-reset-card">
+      <div class="program-reset-kicker">18-WEEK BLOCK COMPLETE</div>
+      <div class="program-reset-title">START YOUR NEXT BAHAMA MAMA CYCLE</div>
+      <div class="program-reset-copy">
+        You finished the full Bahama Mama training block. Keep your current training style or choose a new one before restarting at Week 1.
+      </div>
+      <div class="program-reset-copy" id="programResetCurrentFocus"></div>
+      <button class="btn btn-blue" id="keepCurrentFocusBtn" onclick="startNewProgramCycle(currentTrainingFocus)">KEEP CURRENT STYLE</button>
+      <div style="font-size:.62rem; color:var(--text-muted); margin-top:12px; text-transform:uppercase; font-weight:800;">OR CHOOSE A NEW STYLE</div>
+      <div class="program-reset-focus-grid" style="grid-template-columns:repeat(3,1fr);">
+        <button class="program-reset-focus-btn" id="resetFocus-tone" onclick="startNewProgramCycle('tone')">TONE & TIGHTEN</button>
+        <button class="program-reset-focus-btn" id="resetFocus-muscle" onclick="startNewProgramCycle('muscle')">BUILD MUSCLE</button>
+        <button class="program-reset-focus-btn" id="resetFocus-home" onclick="startNewProgramCycle('home')">HOME / BODYWEIGHT</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
   <script>
     // TRACKER & AUTH STATE
     let currentWeek = parseInt(localStorage.getItem('schmokefit_bm_week') || '1');
@@ -1133,12 +1520,18 @@
     let activeExercises = [];
     let currentMacroMultiplier = 12;
     let currentMacroPhaseMode = 'cut';
-    const USDA_API_KEY = 'DEMO_KEY'; // Prototype only. Use a private backend proxy before a public production launch.
+    let currentTrainingFocus = localStorage.getItem('schmokefit_bm_training_focus') || 'tone';
+    let programResetPending = localStorage.getItem('schmokefit_bm_cycle_reset_pending') === 'true';
+    const USDA_API_KEY = 'DEMO_KEY'; // Prototype key. Replace with a private backend proxy before public release.
     const nutritionMeals = ['Breakfast', 'Lunch', 'Dinner', 'Snacks'];
     let activeNutritionMeal = 'Breakfast';
     let barcodeScanner = null;
     let barcodeScanLocked = false;
     let lastScannedBarcode = '';
+    let nutritionHistoryWeekOffset = 0;
+    let editingFoodMeal = null;
+    let editingFoodIndex = null;
+    let nutritionActiveDateStamp = localDateStamp(new Date());
 
     // INITIAL MASTER PASSWORD LOGIC
     function handleMasterSubmit() {
@@ -1264,11 +1657,19 @@
       document.body.style.alignItems = 'flex-start';
       document.getElementById('headerUserGreeting').innerText = `${username.toUpperCase()}`;
       
-      loadWorkoutDay();
+      restoreTrainingFocus();
       restoreSavedBodyWeight();
       calculateMacros();
-      updateNutritionDashboard();
+      if (currentWeek > 18) {
+        currentWeek = 18;
+        weeklyWorkoutCount = 0;
+        markProgramResetPending();
+      }
       updateWeekTrackerDisplay();
+
+      if (programResetPending) {
+        setTimeout(openProgramResetPrompt, 250);
+      }
 
       // DYNAMIC FIRST-TIME LANDING TAB SELECTION
       const hasLoggedInBefore = localStorage.getItem('schmokefit_bm_has_logged_in_before');
@@ -1277,54 +1678,49 @@
         switchTab('workoutTab', workoutTabBtn);
       } else {
         localStorage.setItem('schmokefit_bm_has_logged_in_before', 'true');
-        const introTabBtn = document.getElementById('tabBtn-introTab');
-        switchTab('introTab', introTabBtn);
+        switchTab('introTab', null);
       }
     }
 
-    // EXERCISE SUBSTITUTION DATABASE - TAILORED FOR WOMEN'S FULL BODY & GLUTE ROUTINES
+    // EXERCISE SUBSTITUTION DATABASE
     const exerciseSubstitutions = {
-      "Barbell Hip Thrusts": ["Barbell Hip Thrusts", "Smith Machine Hip Thrusts", "Single-Leg Hip Thrusts", "Glute Bridge"],
-      "Dumbbell Shoulder Press": ["Dumbbell Shoulder Press", "Standing Arnold Press", "Machine Shoulder Press", "DB Push Press"],
-      "Bulgarian Split Squats": ["Bulgarian Split Squats", "Reverse Deficit Lunges", "Walking Dumbbell Lunges", "Step-Ups"],
-      "Standing Lateral Raises": ["Standing Lateral Raises", "Cable Lateral Raises", "Seated Leaning Lateral Raises"],
-      "Cable Kickbacks": ["Cable Kickbacks", "Glute Medius Cable Abductions", "Resistance Band Kickbacks", "Hyperextensions"],
-      "Goblet Squats": ["Goblet Squats", "Leg Press", "Barbell Front Squats", "Hack Squats"],
-      "Lat Pulldowns": ["Lat Pulldowns", "Assisted Pull-Ups", "Neutral-Grip Pulldown", "Seated Cable Rows"],
-      "Incline Dumbbell Press": ["Incline Dumbbell Press", "Push-Ups (or Kneeling)", "Incline Machine Chest Press", "Dumbbell Flyes"],
-      "Hanging Leg Raises": ["Hanging Leg Raises", "Lying Leg Raises", "Ab Wheel Rollouts", "Plank Shoulder Taps"],
-      "Glute-Focused Hyperextensions": ["Glute-Focused Hyperextensions", "Cable Pull-Throughs", "Single-Leg RDLs"],
-      "Romanian Deadlifts (RDLs)": ["Romanian Deadlifts (RDLs)", "Dumbbell RDLs", "Single-Leg DB RDLs", "Sumo DB Deadlifts"],
-      "Seated Cable Rows": ["Seated Cable Rows", "Single-Arm DB Rows", "Chest-Supported Row", "Bent-Over DB Rows"],
-      "Lying Leg Curls": ["Lying Leg Curls", "Seated Leg Curls", "Swiss Ball Hamstring Curls", "Nordic Curls"],
-      "Incline DB Bicep Curls": ["Incline DB Curls", "Standing DB Curls", "Hammer Curls", "Cable Bicep Curls"],
-      "Rope Tricep Pushdowns": ["Rope Tricep Pushdowns", "Overhead Cable Tricep Ext.", "Bench Dips", "Skullcrushers"]
+      "Barbell Hip Thrusts":["Barbell Hip Thrusts","Smith Machine Hip Thrusts","Single-Leg Hip Thrusts","Glute Bridge"],
+      "Dumbbell Shoulder Press":["Dumbbell Shoulder Press","Standing Arnold Press","Machine Shoulder Press","DB Push Press"],
+      "Bulgarian Split Squats":["Bulgarian Split Squats","Reverse Deficit Lunges","Walking Dumbbell Lunges","Step-Ups"],
+      "Standing Lateral Raises":["Standing Lateral Raises","Cable Lateral Raises","Seated Leaning Lateral Raises"],
+      "Cable Kickbacks":["Cable Kickbacks","Glute Medius Cable Abductions","Resistance Band Kickbacks","Hyperextensions"],
+      "Goblet Squats":["Goblet Squats","Leg Press","Barbell Front Squats","Hack Squats"],
+      "Lat Pulldowns":["Lat Pulldowns","Assisted Pull-Ups","Neutral-Grip Pulldown","Seated Cable Rows"],
+      "Incline Dumbbell Press":["Incline Dumbbell Press","Push-Ups (or Kneeling)","Incline Machine Chest Press","Dumbbell Flyes"],
+      "Hanging Leg Raises":["Hanging Leg Raises","Lying Leg Raises","Ab Wheel Rollouts","Plank Shoulder Taps"],
+      "Glute-Focused Hyperextensions":["Glute-Focused Hyperextensions","Cable Pull-Throughs","Single-Leg RDLs"],
+      "Romanian Deadlifts (RDLs)":["Romanian Deadlifts (RDLs)","Dumbbell RDLs","Single-Leg DB RDLs","Sumo DB Deadlifts"],
+      "Seated Cable Rows":["Seated Cable Rows","Single-Arm DB Rows","Chest-Supported Row","Bent-Over DB Rows"],
+      "Lying Leg Curls":["Lying Leg Curls","Seated Leg Curls","Swiss Ball Hamstring Curls","Nordic Curls"],
+      "Incline DB Bicep Curls":["Incline DB Bicep Curls","Standing DB Curls","Hammer Curls","Cable Bicep Curls"],
+      "Rope Tricep Pushdowns":["Rope Tricep Pushdowns","Overhead Cable Tricep Ext.","Bench Dips","Skullcrushers"],
+      "Dumbbell Romanian Deadlifts":["Dumbbell Romanian Deadlifts","Single-Leg DB RDLs","Sumo DB Deadlifts","Good Mornings"],
+      "Resistance Band Hip Abductions":["Resistance Band Hip Abductions","Banded Clamshells","Lateral Band Walks","Standing Band Abductions"],
+      "Dumbbell Glute Bridges":["Dumbbell Glute Bridges","Bodyweight Glute Bridges","Single-Leg Glute Bridges","Frog Pumps"],
+      "Dumbbell or Bodyweight Glute Bridges":["Dumbbell or Bodyweight Glute Bridges","Single-Leg Glute Bridges","Frog Pumps","Banded Glute Bridges"],
+      "Light Dumbbell Shoulder Press":["Light Dumbbell Shoulder Press","Band Shoulder Press","Arnold Press","Pike Push-Ups"],
+      "Reverse Lunges":["Reverse Lunges","Bodyweight Split Squats","Step-Ups","Walking Lunges"],
+      "Band or Light DB Lateral Raises":["Band or Light DB Lateral Raises","Light DB Lateral Raises","Band Lateral Raises"],
+      "Resistance Band Kickbacks":["Resistance Band Kickbacks","Donkey Kicks","Fire Hydrants","Banded Glute Bridges"],
+      "Bodyweight or Goblet Squats":["Bodyweight or Goblet Squats","Tempo Bodyweight Squats","Sumo Squats","Chair Squats"],
+      "Resistance Band Rows":["Resistance Band Rows","One-Arm Light DB Rows","Bent-Over Light DB Rows","Band Pull-Aparts"],
+      "Incline or Kneeling Push-Ups":["Incline or Kneeling Push-Ups","Wall Push-Ups","Standard Push-Ups","Light DB Floor Press"],
+      "Lying Leg Raises":["Lying Leg Raises","Dead Bugs","Reverse Crunches","Plank Knee Drives"],
+      "Bird Dogs":["Bird Dogs","Dead Bugs","Planks","Bear Plank Shoulder Taps"],
+      "Light DB Single-Leg RDLs":["Light DB Single-Leg RDLs","Bodyweight Single-Leg RDLs","Banded Good Mornings","Light DB RDLs"],
+      "Towel Hamstring Curls":["Towel Hamstring Curls","Slider Hamstring Curls","Glute Bridge Walkouts","Swiss Ball Hamstring Curls"],
+      "Light DB Bicep Curls":["Light DB Bicep Curls","Band Bicep Curls","Hammer Curls","Alternating DB Curls"],
+      "Band Tricep Extensions":["Band Tricep Extensions","Bench Tricep Dips","Light DB Overhead Extensions","Close-Grip Push-Ups"]
     };
 
-    function updateWeekTrackerDisplay() {
-      document.getElementById('weekDisplayTitle').innerText = `WEEK ${currentWeek}`;
-      document.getElementById('weekProgressSubtext').innerText = `Workouts Logged This Week: ${weeklyWorkoutCount} / 3`;
 
-      const badge = document.getElementById('phaseDisplayBadge');
-      if (currentWeek <= 10) {
-        badge.innerText = "PHASE 1: TONE & TRIM DEFICIT";
-      } else if (currentWeek <= 18) {
-        badge.innerText = "PHASE 2: BODY RECOMP";
-      } else {
-        badge.innerText = "PHASE 3: RESET & REPEAT";
-      }
-
-      localStorage.setItem('schmokefit_bm_week', currentWeek.toString());
-      localStorage.setItem('schmokefit_bm_wk_count', weeklyWorkoutCount.toString());
-    }
-
-    function adjustWeek(delta) {
-      currentWeek = Math.max(1, currentWeek + delta);
-      weeklyWorkoutCount = 0;
-      updateWeekTrackerDisplay();
-    }
-
-    // BASE ROUTINES DATA - 3-DAY WOMEN'S FULL BODY ROUTINE
+    // BAHAMA MAMA TRAINING STYLES
+    // Tone & Tighten preserves the original workout exactly.
     const defaultRoutines = {
       monday: [
         { name: "Barbell Hip Thrusts", badge: "KEY LIFT", badgeClass: "badge-key" },
@@ -1349,6 +1745,154 @@
       ]
     };
 
+    const focusRoutines = {
+      tone: {
+        monday: [...defaultRoutines.monday],
+        wednesday: [...defaultRoutines.wednesday],
+        friday: [...defaultRoutines.friday]
+      },
+
+      muscle: {
+        monday: [
+          ...defaultRoutines.monday,
+          { name: "Dumbbell Romanian Deadlifts", badge: "EXTRA VOLUME", badgeClass: "badge-supp" }
+        ],
+        wednesday: [
+          ...defaultRoutines.wednesday,
+          { name: "Resistance Band Hip Abductions", badge: "EXTRA VOLUME", badgeClass: "badge-supp" }
+        ],
+        friday: [
+          ...defaultRoutines.friday,
+          { name: "Dumbbell Glute Bridges", badge: "EXTRA VOLUME", badgeClass: "badge-supp" }
+        ]
+      },
+
+      home: {
+        monday: [
+          { name: "Dumbbell or Bodyweight Glute Bridges", badge: "KEY LIFT", badgeClass: "badge-key" },
+          { name: "Light Dumbbell Shoulder Press", badge: "KEY LIFT", badgeClass: "badge-key" },
+          { name: "Reverse Lunges", badge: "STANDARD", badgeClass: "badge-standard" },
+          { name: "Band or Light DB Lateral Raises", badge: "SUPP.", badgeClass: "badge-supp" },
+          { name: "Resistance Band Kickbacks", badge: "GLUTE SHAPE", badgeClass: "badge-supp" }
+        ],
+        wednesday: [
+          { name: "Bodyweight or Goblet Squats", badge: "KEY LIFT", badgeClass: "badge-key" },
+          { name: "Resistance Band Rows", badge: "KEY LIFT", badgeClass: "badge-key" },
+          { name: "Incline or Kneeling Push-Ups", badge: "STANDARD", badgeClass: "badge-standard" },
+          { name: "Lying Leg Raises", badge: "CORE", badgeClass: "badge-supp" },
+          { name: "Bird Dogs", badge: "OPTIONAL", badgeClass: "badge-optional" }
+        ],
+        friday: [
+          { name: "Light DB Single-Leg RDLs", badge: "KEY LIFT", badgeClass: "badge-key" },
+          { name: "Resistance Band Rows", badge: "KEY LIFT", badgeClass: "badge-key" },
+          { name: "Towel Hamstring Curls", badge: "SUPERSET", badgeClass: "badge-superset" },
+          { name: "Light DB Bicep Curls", badge: "SUPERSET", badgeClass: "badge-superset" },
+          { name: "Band Tricep Extensions", badge: "SUPP.", badgeClass: "badge-supp" }
+        ]
+      }
+    };
+
+    const focusDescriptions = {
+      tone: "the original Bahama Mama workout exactly as designed.",
+      muscle: "the original routine with one extra volume movement each day.",
+      home: "a home-friendly version using bodyweight, resistance bands, and light dumbbells."
+    };
+
+    const focusDisplayNames = {
+      tone: "Tone & Tighten",
+      muscle: "Build Muscle",
+      home: "Home / Bodyweight"
+    };
+
+    function setTrainingFocus(focus, btn = null) {
+      if (!focusRoutines[focus]) focus = "tone";
+
+      currentTrainingFocus = focus;
+      localStorage.setItem("schmokefit_bm_training_focus", focus);
+
+      document.querySelectorAll(".focus-toggle-btn").forEach(button => button.classList.remove("active"));
+
+      const activeButton = btn || document.getElementById(`focusBtn-${focus}`);
+      if (activeButton) activeButton.classList.add("active");
+
+      const label = document.getElementById("focusActiveText");
+      if (label) {
+        label.innerHTML = `<strong>${focusDisplayNames[focus].toUpperCase()} ACTIVE</strong> — ${focusDescriptions[focus]}`;
+      }
+
+      loadWorkoutDay();
+    }
+
+    function restoreTrainingFocus() {
+      if (!focusRoutines[currentTrainingFocus]) currentTrainingFocus = "tone";
+      setTrainingFocus(
+        currentTrainingFocus,
+        document.getElementById(`focusBtn-${currentTrainingFocus}`)
+      );
+    }
+
+    function updateWeekTrackerDisplay() {
+      currentWeek = Math.min(18, Math.max(1, currentWeek));
+      document.getElementById('weekDisplayTitle').innerText = `WEEK ${currentWeek}`;
+      document.getElementById('weekProgressSubtext').innerText = `Workouts Logged This Week: ${weeklyWorkoutCount} / 3`;
+
+      const badge = document.getElementById('phaseDisplayBadge');
+      if (currentWeek <= 10) {
+        badge.innerText = "PHASE 1: TONE & TRIM";
+      } else {
+        badge.innerText = "PHASE 2: BODY RECOMP";
+      }
+
+      localStorage.setItem('schmokefit_bm_week', currentWeek.toString());
+      localStorage.setItem('schmokefit_bm_wk_count', weeklyWorkoutCount.toString());
+    }
+
+    function adjustWeek(delta) {
+      if (delta > 0 && currentWeek >= 18) {
+        weeklyWorkoutCount = 0;
+        localStorage.setItem('schmokefit_bm_wk_count', '0');
+        markProgramResetPending();
+        openProgramResetPrompt();
+        return;
+      }
+
+      currentWeek = Math.min(18, Math.max(1, currentWeek + delta));
+      weeklyWorkoutCount = 0;
+      updateWeekTrackerDisplay();
+    }
+
+    function markProgramResetPending() {
+      programResetPending = true;
+      localStorage.setItem('schmokefit_bm_cycle_reset_pending', 'true');
+    }
+
+    function openProgramResetPrompt() {
+      const overlay = document.getElementById('programResetOverlay');
+      if (!overlay) return;
+      const focusName = focusDisplayNames[currentTrainingFocus] || 'Tone & Tighten';
+      const currentText = document.getElementById('programResetCurrentFocus');
+      const keepBtn = document.getElementById('keepCurrentFocusBtn');
+      if (currentText) currentText.innerHTML = `Current style: <strong style="color:var(--accent-blue);">${focusName}</strong>`;
+      if (keepBtn) keepBtn.innerText = `KEEP ${focusName.toUpperCase()}`;
+      document.querySelectorAll('.program-reset-focus-btn').forEach(btn => btn.classList.remove('current'));
+      document.getElementById(`resetFocus-${currentTrainingFocus}`)?.classList.add('current');
+      overlay.classList.add('open');
+    }
+
+    function startNewProgramCycle(focus) {
+      if (!focusRoutines[focus]) focus = currentTrainingFocus || 'tone';
+      currentWeek = 1;
+      weeklyWorkoutCount = 0;
+      programResetPending = false;
+      localStorage.setItem('schmokefit_bm_week', '1');
+      localStorage.setItem('schmokefit_bm_wk_count', '0');
+      localStorage.removeItem('schmokefit_bm_cycle_reset_pending');
+      setTrainingFocus(focus);
+      updateWeekTrackerDisplay();
+      document.getElementById('programResetOverlay')?.classList.remove('open');
+      alert(`New 18-week Bahama Mama cycle started! Style: ${focusDisplayNames[focus]}. You're back to Week 1.`);
+    }
+
     function getPreviousExerciseSet(exName, setNum) {
       const history = JSON.parse(localStorage.getItem('schmokefit_bm_history') || '[]');
       for (let log of history) {
@@ -1372,7 +1916,12 @@
         renderHistory();
       }
       if(tabId === 'macrosTab') {
+        checkNutritionDateRollover();
         updateNutritionDashboard();
+      }
+      if(tabId === 'nutritionHistoryTab') {
+        checkNutritionDateRollover();
+        renderNutritionHistoryWeek();
       }
     }
 
@@ -1385,15 +1934,34 @@
     }
 
     function loadWorkoutDay() {
-      const selectedDay = document.getElementById('workoutDaySelect').value;
-      activeExercises = JSON.parse(JSON.stringify(defaultRoutines[selectedDay]));
+      const daySelect = document.getElementById('workoutDaySelect');
+      if (!daySelect) return;
+
+      const selectedDay = daySelect.value || 'monday';
+
+      if (!focusRoutines[currentTrainingFocus]) {
+        currentTrainingFocus = 'tone';
+        localStorage.setItem('schmokefit_bm_training_focus', 'tone');
+      }
+
+      const routineSet = focusRoutines[currentTrainingFocus] || focusRoutines.tone;
+      const selectedRoutine = routineSet[selectedDay] || focusRoutines.tone[selectedDay] || [];
+
+      activeExercises = JSON.parse(JSON.stringify(selectedRoutine));
       resetTimerPosition();
       renderWorkoutExercises();
     }
 
     function renderWorkoutExercises() {
       const container = document.getElementById('exerciseContainer');
+      if (!container) return;
+
       container.innerHTML = '';
+
+      if (!Array.isArray(activeExercises) || activeExercises.length === 0) {
+        container.innerHTML = '<div class="card" style="text-align:center;color:var(--text-muted);font-size:.72rem;">No workout loaded. Select a training style or workout day to reload the session.</div>';
+        return;
+      }
 
       activeExercises.forEach((ex, idx) => {
         const prev1 = getPreviousExerciseSet(ex.name, 1);
@@ -1425,11 +1993,11 @@
           
           <!-- SET 1 -->
           <div class="set-row">
-            <div class="set-label">Set 1 (Top)</div>
+            <div class="set-label">Set 1 (Heavy)</div>
             <div class="prev-val-box" title="Previous Session Weight × Reps">${prev1}</div>
             <div class="set-input-group">
               <input type="number" class="set-input ex-${idx}-w1" placeholder="Wt" oninput="autoCalcRPT(${idx})">
-              <input type="text" class="set-input ex-${idx}-r1" placeholder="Reps (8-10)" onchange="onRepsEntered(${idx})">
+              <input type="text" class="set-input ex-${idx}-r1" placeholder="Reps (4-6)" onchange="onRepsEntered(${idx})">
             </div>
           </div>
 
@@ -1439,7 +2007,7 @@
             <div class="prev-val-box" title="Previous Session Weight × Reps">${prev2}</div>
             <div class="set-input-group">
               <input type="number" class="set-input ex-${idx}-w2" placeholder="Wt">
-              <input type="text" class="set-input ex-${idx}-r2" placeholder="Reps (10-12)" onchange="onRepsEntered(${idx})">
+              <input type="text" class="set-input ex-${idx}-r2" placeholder="Reps (6-8)" onchange="onRepsEntered(${idx})">
             </div>
           </div>
 
@@ -1449,7 +2017,7 @@
             <div class="prev-val-box" title="Previous Session Weight × Reps">${prev3}</div>
             <div class="set-input-group">
               <input type="number" class="set-input ex-${idx}-w3" placeholder="Wt" oninput="checkExerciseCompletion(${idx})">
-              <input type="text" class="set-input ex-${idx}-r3" placeholder="Reps (12-15)" onchange="onRepsEntered(${idx})">
+              <input type="text" class="set-input ex-${idx}-r3" placeholder="Reps (8-10)" onchange="onRepsEntered(${idx})">
             </div>
           </div>
         `;
@@ -1528,7 +2096,7 @@
 
     // TIMER LOGIC & PULSE ALARM
     let timerInterval = null;
-    let totalSeconds = 120;
+    let totalSeconds = 150;
 
     function playTimerAlarm() {
       try {
@@ -1540,8 +2108,8 @@
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(1200.00, ctx.currentTime + startTime);
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(1046.50, ctx.currentTime + startTime);
           
           gain.gain.setValueAtTime(0.3, ctx.currentTime + startTime);
           gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + startTime + 0.15);
@@ -1585,7 +2153,7 @@
 
     function resetTimer() {
       clearInterval(timerInterval);
-      totalSeconds = 120;
+      totalSeconds = 150;
       updateTimerDisplay();
     }
 
@@ -1608,7 +2176,7 @@
       } else if (mode === 'maint') {
         sublabel.innerText = 'DAILY MAINTENANCE CALORIE TARGET';
       } else if (mode === 'bulk') {
-        sublabel.innerText = 'DAILY LEAN TONE CALORIE TARGET';
+        sublabel.innerText = 'DAILY LEAN BULK CALORIE TARGET';
       }
 
       calculateMacros();
@@ -1673,6 +2241,15 @@
       weeklyWorkoutCount++;
       if (weeklyWorkoutCount >= 3) {
         weeklyWorkoutCount = 0;
+
+        if (currentWeek >= 18) {
+          updateWeekTrackerDisplay();
+          markProgramResetPending();
+          alert('Workout saved! 🎉 You completed Week 18 and finished this Bahama Mama training block.');
+          openProgramResetPrompt();
+          return;
+        }
+
         currentWeek++;
         alert(`Workout saved! 🎉 Congratulations on completing 3 workouts this week! Advancing to Week ${currentWeek}.`);
       } else {
@@ -1684,26 +2261,56 @@
       renderWorkoutExercises();
     }
 
-    function nutritionDateKey() {
-      const d = new Date();
-      const yyyy = d.getFullYear();
-      const mm = String(d.getMonth() + 1).padStart(2, '0');
-      const dd = String(d.getDate()).padStart(2, '0');
-      return `schmokefit_bm_nutrition_${yyyy}-${mm}-${dd}`;
+    function localDateStamp(date = new Date()) {
+      const yyyy = date.getFullYear();
+      const mm = String(date.getMonth() + 1).padStart(2, '0');
+      const dd = String(date.getDate()).padStart(2, '0');
+      return `${yyyy}-${mm}-${dd}`;
     }
 
-    function getNutritionLog() {
+    function nutritionDateKey(dateStamp = localDateStamp(new Date())) {
+      return `schmokefit_bm_nutrition_${dateStamp}`;
+    }
+
+    function nutritionMetaKey(dateStamp = localDateStamp(new Date())) {
+      return `schmokefit_bm_nutrition_meta_${dateStamp}`;
+    }
+
+    function getNutritionLogForDate(dateStamp) {
       const blank = { Breakfast: [], Lunch: [], Dinner: [], Snacks: [] };
       try {
-        const saved = JSON.parse(localStorage.getItem(nutritionDateKey()) || 'null');
+        const saved = JSON.parse(localStorage.getItem(nutritionDateKey(dateStamp)) || 'null');
         return saved && typeof saved === 'object' ? { ...blank, ...saved } : blank;
       } catch (e) {
         return blank;
       }
     }
 
+    function getNutritionLog() {
+      return getNutritionLogForDate(localDateStamp(new Date()));
+    }
+
     function saveNutritionLog(log) {
-      localStorage.setItem(nutritionDateKey(), JSON.stringify(log));
+      const todayStamp = localDateStamp(new Date());
+      localStorage.setItem(nutritionDateKey(todayStamp), JSON.stringify(log));
+
+      // Preserve the target settings used on this day for future history displays.
+      localStorage.setItem(nutritionMetaKey(todayStamp), JSON.stringify({
+        goals: getNutritionGoals(),
+        savedAt: new Date().toISOString()
+      }));
+    }
+
+    function nutritionTotalsFromLog(log) {
+      return nutritionMeals.reduce((totals, meal) => {
+        (log[meal] || []).forEach(item => {
+          totals.calories += Number(item.calories) || 0;
+          totals.protein += Number(item.protein) || 0;
+          totals.carbs += Number(item.carbs) || 0;
+          totals.fat += Number(item.fat) || 0;
+        });
+        return totals;
+      }, { calories: 0, protein: 0, carbs: 0, fat: 0 });
     }
 
     function getNutritionGoals() {
@@ -1715,16 +2322,7 @@
     }
 
     function getNutritionTotals() {
-      const log = getNutritionLog();
-      return nutritionMeals.reduce((totals, meal) => {
-        (log[meal] || []).forEach(item => {
-          totals.calories += Number(item.calories) || 0;
-          totals.protein += Number(item.protein) || 0;
-          totals.carbs += Number(item.carbs) || 0;
-          totals.fat += Number(item.fat) || 0;
-        });
-        return totals;
-      }, { calories: 0, protein: 0, carbs: 0, fat: 0 });
+      return nutritionTotalsFromLog(getNutritionLog());
     }
 
     function updateNutritionDashboard() {
@@ -1740,6 +2338,8 @@
 
       const calRemain = Math.round(goals.calories - totals.calories);
       const proRemain = rounded(goals.protein - totals.protein);
+      document.getElementById('calorieConsumedText').innerText = `${Math.round(totals.calories).toLocaleString()} consumed`;
+      document.getElementById('proteinConsumedText').innerText = `${rounded(totals.protein)}g consumed`;
       document.getElementById('calorieRemainingText').innerText = calRemain >= 0 ? `${calRemain.toLocaleString()} remaining` : `${Math.abs(calRemain).toLocaleString()} over`;
       document.getElementById('proteinRemainingText').innerText = proRemain >= 0 ? `${proRemain}g remaining` : `${Math.abs(proRemain)}g over`;
 
@@ -1755,10 +2355,14 @@
       container.innerHTML = nutritionMeals.map(meal => {
         const items = log[meal] || [];
         const rows = items.length ? items.map((item, idx) => `
-          <div class="food-row">
-            <div><div class="food-name">${escapeHtml(item.name)}</div><div class="food-macros">${Math.round(item.calories)} kcal • ${round1(item.protein)}P • ${round1(item.carbs)}C • ${round1(item.fat)}F</div></div>
-            <div class="food-macros">${round1(item.grams)}g</div>
-            <button class="food-remove" onclick="removeFoodItem('${meal}', ${idx})" aria-label="Remove ${escapeHtml(item.name)}">✕</button>
+          <div class="food-row" onclick="openFoodEdit('${meal}', ${idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openFoodEdit('${meal}', ${idx});}">
+            <div>
+              <div class="food-name">${escapeHtml(item.name)}</div>
+              <div class="food-macros">${Math.round(item.calories)} kcal • ${round1(item.protein)}P • ${round1(item.carbs)}C • ${round1(item.fat)}F</div>
+              <div class="food-edit-hint">Tap to edit amount</div>
+            </div>
+            <div class="food-amount">${formatLoggedFoodAmount(item)}</div>
+            <button class="food-remove" onclick="event.stopPropagation(); removeFoodItem('${meal}', ${idx})" aria-label="Remove ${escapeHtml(item.name)}">✕</button>
           </div>`).join('') : '<div class="nutrition-empty">No foods logged.</div>';
         return `<div class="meal-section"><div class="meal-header"><div class="meal-title">${meal.toUpperCase()}</div><button class="meal-add-btn" onclick="openFoodSearch('${meal}')">+ ADD</button></div>${rows}</div>`;
       }).join('');
@@ -1883,6 +2487,31 @@
       }
     }
 
+    const GRAMS_PER_OUNCE = 28.349523125;
+
+    function amountToGrams(amount, unit, servingGrams = 0) {
+      const qty = Math.max(0.01, Number(amount) || 0.01);
+      if (unit === 'oz') return qty * GRAMS_PER_OUNCE;
+      if (unit === 'serving' && Number(servingGrams) > 0) return qty * Number(servingGrams);
+      return qty;
+    }
+
+    function gramsToAmount(grams, unit, servingGrams = 0) {
+      const g = Math.max(0.01, Number(grams) || 0.01);
+      if (unit === 'oz') return g / GRAMS_PER_OUNCE;
+      if (unit === 'serving' && Number(servingGrams) > 0) return g / Number(servingGrams);
+      return g;
+    }
+
+    function normalizeUsdaServingGrams(food) {
+      const size = Number(food?.servingSize);
+      const unit = String(food?.servingSizeUnit || '').trim().toLowerCase();
+      if (!(size > 0)) return 0;
+      if (unit === 'g' || unit === 'gram' || unit === 'grams') return size;
+      if (unit === 'oz' || unit === 'ounce' || unit === 'ounces') return size * GRAMS_PER_OUNCE;
+      return 0;
+    }
+
     async function lookupBarcode(barcode) {
       const results = document.getElementById('foodSearchResults');
       const saved = getSavedBarcodeFoods();
@@ -1957,6 +2586,7 @@
         name: food.name,
         barcode,
         servingText: food.servingText || `${serving} g`,
+        servingGrams: serving,
         calories: numberOrZero(food.caloriesPer100),
         protein: numberOrZero(food.proteinPer100),
         carbs: numberOrZero(food.carbsPer100),
@@ -1972,7 +2602,12 @@
           </div>
         </div>
         <div class="search-result-controls">
-          <input type="number" min="1" step="1" value="${round1(serving)}" id="barcodeFoodGrams" class="custom-select" aria-label="Grams">
+          <input type="number" min="0.01" step="0.01" value="1" id="barcodeFoodAmount" class="custom-select" aria-label="Amount">
+          <select id="barcodeFoodUnit" class="custom-select" aria-label="Unit">
+            <option value="serving" selected>serving</option>
+            <option value="g">grams</option>
+            <option value="oz">ounces</option>
+          </select>
           <button class="btn btn-blue" style="margin-top:0;" onclick='addBarcodeFood(${payload})'>ADD TO ${activeNutritionMeal.toUpperCase()}</button>
         </div>
       </div>`;
@@ -1980,11 +2615,16 @@
 
     function addBarcodeFood(serializedFood) {
       const base = JSON.parse(serializedFood);
-      const grams = Math.max(1, Number(document.getElementById('barcodeFoodGrams')?.value) || 100);
+      const amount = Math.max(0.01, Number(document.getElementById('barcodeFoodAmount')?.value) || 1);
+      const unit = document.getElementById('barcodeFoodUnit')?.value || 'serving';
+      const servingGrams = Math.max(1, Number(base.servingGrams) || 100);
+      const grams = amountToGrams(amount, unit, servingGrams);
       const scale = grams / 100;
       const item = {
         name: base.name,
         grams,
+        servingGrams,
+        servingText: base.servingText || `${round1(servingGrams)} g`,
         calories: numberOrZero(base.calories) * scale,
         protein: numberOrZero(base.protein) * scale,
         carbs: numberOrZero(base.carbs) * scale,
@@ -2035,7 +2675,9 @@
       const protein = numberOrZero(document.getElementById('manualFoodProtein').value);
       const carbs = numberOrZero(document.getElementById('manualFoodCarbs').value);
       const fat = numberOrZero(document.getElementById('manualFoodFat').value);
-      const grams = Math.max(1, Number(document.getElementById('manualFoodServing').value) || 100);
+      const manualAmount = Math.max(0.01, Number(document.getElementById('manualFoodServing').value) || 100);
+      const manualUnit = document.getElementById('manualFoodUnit')?.value || 'g';
+      const grams = amountToGrams(manualAmount, manualUnit, 0);
       const barcode = document.getElementById('manualFoodBarcode').value.trim();
 
       if (!name) {
@@ -2075,6 +2717,8 @@
       document.getElementById('manualFoodFat').value = '';
       document.getElementById('manualFoodServing').value = '100';
       document.getElementById('manualFoodBarcode').value = '';
+      const unit = document.getElementById('manualFoodUnit');
+      if (unit) unit.value = 'g';
     }
 
     async function searchUsdaFoods() {
@@ -2100,11 +2744,39 @@
           const n = extractUsdaMacros(food.foodNutrients || []);
           const desc = food.description || food.lowercaseDescription || 'USDA Food';
           const brand = food.brandOwner || food.brandName || food.dataType || 'USDA';
+          const servingGrams = normalizeUsdaServingGrams(food);
+          const servingText = food.householdServingFullText || (servingGrams > 0 ? `${round1(servingGrams)} g serving` : '');
+          const defaultAmount = servingGrams > 0 ? 1 : 100;
+          const defaultUnit = servingGrams > 0 ? 'serving' : 'g';
+          const servingOption = servingGrams > 0
+            ? `<option value="serving" ${defaultUnit === 'serving' ? 'selected' : ''}>serving</option>`
+            : `<option value="serving" disabled>serving n/a</option>`;
+          const payload = JSON.stringify(JSON.stringify({
+            name: desc,
+            calories: n.calories,
+            protein: n.protein,
+            carbs: n.carbs,
+            fat: n.fat,
+            servingGrams,
+            servingText
+          }));
+
           return `<div class="search-result">
-            <div class="search-result-top"><div><div class="search-result-name">${escapeHtml(desc)}</div><div class="search-result-meta">${escapeHtml(brand)} • per 100g: ${Math.round(n.calories)} kcal • ${round1(n.protein)}P • ${round1(n.carbs)}C • ${round1(n.fat)}F</div></div></div>
+            <div class="search-result-top">
+              <div>
+                <div class="search-result-name">${escapeHtml(desc)}</div>
+                <div class="search-result-meta">${escapeHtml(brand)} • per 100g: ${Math.round(n.calories)} kcal • ${round1(n.protein)}P • ${round1(n.carbs)}C • ${round1(n.fat)}F</div>
+                ${servingGrams > 0 ? `<div class="search-result-meta">Serving: ${escapeHtml(servingText || `${round1(servingGrams)} g`)}</div>` : ''}
+              </div>
+            </div>
             <div class="search-result-controls">
-              <input type="number" min="1" step="1" value="100" id="foodGrams-${idx}" class="custom-select" aria-label="Grams">
-              <button class="btn btn-blue" style="margin-top:0;" onclick='addUsdaFood(${JSON.stringify(JSON.stringify({name:desc, calories:n.calories, protein:n.protein, carbs:n.carbs, fat:n.fat}))}, ${idx})'>ADD TO ${activeNutritionMeal.toUpperCase()}</button>
+              <input type="number" min="0.01" step="0.01" value="${defaultAmount}" id="foodAmount-${idx}" class="custom-select" aria-label="Amount">
+              <select id="foodUnit-${idx}" class="custom-select" aria-label="Unit">
+                ${servingOption}
+                <option value="g" ${defaultUnit === 'g' ? 'selected' : ''}>grams</option>
+                <option value="oz">ounces</option>
+              </select>
+              <button class="btn btn-blue" style="margin-top:0;" onclick='addUsdaFood(${payload}, ${idx})'>ADD TO ${activeNutritionMeal.toUpperCase()}</button>
             </div>
           </div>`;
         }).join('');
@@ -2129,11 +2801,16 @@
 
     function addUsdaFood(serializedFood, idx) {
       const base = JSON.parse(serializedFood);
-      const grams = Math.max(1, Number(document.getElementById(`foodGrams-${idx}`)?.value) || 100);
+      const amount = Math.max(0.01, Number(document.getElementById(`foodAmount-${idx}`)?.value) || 1);
+      const unit = document.getElementById(`foodUnit-${idx}`)?.value || 'g';
+      const servingGrams = Number(base.servingGrams) > 0 ? Number(base.servingGrams) : 0;
+      const grams = amountToGrams(amount, unit, servingGrams);
       const scale = grams / 100;
       const item = {
         name: base.name,
         grams,
+        servingGrams,
+        servingText: base.servingText || '',
         calories: base.calories * scale,
         protein: base.protein * scale,
         carbs: base.carbs * scale,
@@ -2146,6 +2823,118 @@
       closeFoodSearch();
     }
 
+    function formatLoggedFoodAmount(item) {
+      const grams = Number(item?.grams) || 0;
+      const servingGrams = Number(item?.servingGrams) || 0;
+      if (servingGrams > 0) {
+        const servings = grams / servingGrams;
+        if (Math.abs(servings - Math.round(servings * 4) / 4) < 0.01) {
+          const label = Math.abs(servings - 1) < 0.01 ? 'serving' : 'servings';
+          return `${round1(servings)} ${label}`;
+        }
+      }
+      return `${round1(grams)}g`;
+    }
+
+    function openFoodEdit(meal, index) {
+      const log = getNutritionLog();
+      const item = log?.[meal]?.[index];
+      if (!item) return;
+
+      editingFoodMeal = meal;
+      editingFoodIndex = index;
+
+      document.getElementById('foodEditTitle').innerText = item.name || 'EDIT FOOD';
+
+      const servingGrams = Number(item.servingGrams) > 0 ? Number(item.servingGrams) : 0;
+      const unitSelect = document.getElementById('foodEditUnit');
+      const servingOption = unitSelect?.querySelector('option[value="serving"]');
+      if (servingOption) servingOption.disabled = !(servingGrams > 0);
+
+      let preferredUnit = 'g';
+      if (servingGrams > 0 && Math.abs((Number(item.grams) || 0) / servingGrams - Math.round((Number(item.grams) || 0) / servingGrams)) < 0.01) {
+        preferredUnit = 'serving';
+      }
+
+      if (unitSelect) unitSelect.value = preferredUnit;
+      const amountInput = document.getElementById('foodEditAmount');
+      if (amountInput) amountInput.value = round1(gramsToAmount(item.grams || 100, preferredUnit, servingGrams));
+
+      const servingNote = document.getElementById('foodEditServingNote');
+      if (servingNote) {
+        servingNote.innerText = servingGrams > 0
+          ? `1 serving = ${item.servingText || `${round1(servingGrams)} g`}`
+          : 'Serving size is not available for this food; use grams or ounces.';
+      }
+
+      updateFoodEditPreview();
+
+      const overlay = document.getElementById('foodEditOverlay');
+      if (overlay) overlay.classList.add('open');
+
+      if (amountInput) {
+        amountInput.oninput = updateFoodEditPreview;
+        setTimeout(() => amountInput.focus(), 50);
+      }
+    }
+
+    function updateFoodEditPreview() {
+      if (editingFoodMeal === null || editingFoodIndex === null) return;
+      const log = getNutritionLog();
+      const item = log?.[editingFoodMeal]?.[editingFoodIndex];
+      if (!item) return;
+
+      const oldGrams = Math.max(0.01, Number(item.grams) || 0.01);
+      const amount = Math.max(0.01, Number(document.getElementById('foodEditAmount')?.value) || 1);
+      const unit = document.getElementById('foodEditUnit')?.value || 'g';
+      const servingGrams = Number(item.servingGrams) > 0 ? Number(item.servingGrams) : 0;
+      const newGrams = amountToGrams(amount, unit, servingGrams);
+      const scale = newGrams / oldGrams;
+
+      const preview = document.getElementById('foodEditPreview');
+      if (preview) {
+        preview.innerText = `${Math.round((Number(item.calories) || 0) * scale)} kcal • ${round1((Number(item.protein) || 0) * scale)}g protein • ${round1((Number(item.carbs) || 0) * scale)}g carbs • ${round1((Number(item.fat) || 0) * scale)}g fat`;
+      }
+    }
+
+    function saveFoodEdit() {
+      if (editingFoodMeal === null || editingFoodIndex === null) return;
+
+      const log = getNutritionLog();
+      const item = log?.[editingFoodMeal]?.[editingFoodIndex];
+      if (!item) {
+        closeFoodEdit();
+        return;
+      }
+
+      const oldGrams = Math.max(0.01, Number(item.grams) || 0.01);
+      const amount = Math.max(0.01, Number(document.getElementById('foodEditAmount')?.value) || 1);
+      const unit = document.getElementById('foodEditUnit')?.value || 'g';
+      const servingGrams = Number(item.servingGrams) > 0 ? Number(item.servingGrams) : 0;
+      const newGrams = amountToGrams(amount, unit, servingGrams);
+      const scale = newGrams / oldGrams;
+
+      item.calories = (Number(item.calories) || 0) * scale;
+      item.protein = (Number(item.protein) || 0) * scale;
+      item.carbs = (Number(item.carbs) || 0) * scale;
+      item.fat = (Number(item.fat) || 0) * scale;
+      item.grams = newGrams;
+
+      saveNutritionLog(log);
+      updateNutritionDashboard();
+      closeFoodEdit();
+    }
+
+    function closeFoodEdit() {
+      document.getElementById('foodEditOverlay')?.classList.remove('open');
+      editingFoodMeal = null;
+      editingFoodIndex = null;
+    }
+
+    function closeFoodEditIfBackdrop(event) {
+      if (event.target?.id === 'foodEditOverlay') closeFoodEdit();
+    }
+
     function removeFoodItem(meal, index) {
       const log = getNutritionLog();
       log[meal].splice(index, 1);
@@ -2153,15 +2942,173 @@
       updateNutritionDashboard();
     }
 
-    function saveDailyNutritionSummary() {
-      const totals = getNutritionTotals();
-      const goals = getNutritionGoals();
-      const dateStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    function formatNutritionHistoryDate(dateStamp) {
+      const [y, m, d] = dateStamp.split('-').map(Number);
+      return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    function getNutritionGoalsForDate(dateStamp) {
+      try {
+        const meta = JSON.parse(localStorage.getItem(nutritionMetaKey(dateStamp)) || 'null');
+        if (meta?.goals) return meta.goals;
+      } catch (e) {}
+      return getNutritionGoals();
+    }
+
+    function upsertNutritionHistoryEntry(dateStamp, showAlert = false) {
+      const log = getNutritionLogForDate(dateStamp);
+      const totals = nutritionTotalsFromLog(log);
+      const hasFood = nutritionMeals.some(meal => (log[meal] || []).length > 0);
+
+      // Do not create empty nutrition-history cards for days with no food logged.
+      if (!hasFood) return false;
+
+      const goals = getNutritionGoalsForDate(dateStamp);
       const summary = `Logged: ${Math.round(totals.calories)} / ${goals.calories} kcal | ${round1(totals.protein)} / ${goals.protein}g Protein | ${round1(totals.carbs)}g Carbs | ${round1(totals.fat)}g Fat`;
       const history = JSON.parse(localStorage.getItem('schmokefit_bm_history') || '[]');
-      history.unshift({ date: dateStr, type: 'MACROS', title: 'Daily Nutrition Log', details: summary });
+      const entryId = `nutrition-${dateStamp}`;
+      const existingIndex = history.findIndex(item => item.entryId === entryId);
+
+      const entry = {
+        entryId,
+        nutritionDate: dateStamp,
+        date: formatNutritionHistoryDate(dateStamp),
+        type: 'MACROS',
+        title: 'Daily Nutrition Log',
+        details: summary,
+        nutritionTotals: {
+          calories: Math.round(totals.calories),
+          protein: round1(totals.protein),
+          carbs: round1(totals.carbs),
+          fat: round1(totals.fat)
+        },
+        nutritionGoals: goals
+      };
+
+      if (existingIndex >= 0) {
+        history[existingIndex] = entry;
+      } else {
+        history.unshift(entry);
+      }
+
       localStorage.setItem('schmokefit_bm_history', JSON.stringify(history));
-      alert('Today\'s nutrition summary was saved to History!');
+      localStorage.setItem(`schmokefit_bm_nutrition_archived_${dateStamp}`, 'true');
+
+      if (showAlert) alert('Today\'s nutrition summary was saved to History!');
+      return true;
+    }
+
+    function saveDailyNutritionSummary() {
+      upsertNutritionHistoryEntry(localDateStamp(new Date()), true);
+    }
+
+    function autoArchivePastNutritionDays() {
+      const todayStamp = localDateStamp(new Date());
+      const prefix = 'schmokefit_bm_nutrition_';
+      const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+      const dates = [];
+
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (!key || !key.startsWith(prefix) || key.startsWith('schmokefit_bm_nutrition_meta_') || key.startsWith('schmokefit_bm_nutrition_archived_')) continue;
+        const dateStamp = key.slice(prefix.length);
+        if (datePattern.test(dateStamp) && dateStamp < todayStamp) dates.push(dateStamp);
+      }
+
+      dates.sort().forEach(dateStamp => {
+        // Upsert even if it was archived previously; this safely updates legacy/manual entries without duplicates.
+        upsertNutritionHistoryEntry(dateStamp, false);
+      });
+    }
+
+    function checkNutritionDateRollover() {
+      const todayStamp = localDateStamp(new Date());
+
+      if (todayStamp !== nutritionActiveDateStamp) {
+        // The app stayed open across midnight. Archive the day that just ended.
+        upsertNutritionHistoryEntry(nutritionActiveDateStamp, false);
+        nutritionActiveDateStamp = todayStamp;
+        updateNutritionDashboard();
+      }
+
+      autoArchivePastNutritionDays();
+    }
+
+    function getWeekStart(date) {
+      const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      const day = d.getDay(); // Sunday=0
+      const mondayOffset = day === 0 ? -6 : 1 - day;
+      d.setDate(d.getDate() + mondayOffset);
+      d.setHours(0, 0, 0, 0);
+      return d;
+    }
+
+    function addDays(date, amount) {
+      const d = new Date(date);
+      d.setDate(d.getDate() + amount);
+      return d;
+    }
+
+    function changeNutritionHistoryWeek(delta) {
+      nutritionHistoryWeekOffset = Math.min(0, nutritionHistoryWeekOffset + delta);
+      renderNutritionHistoryWeek();
+    }
+
+    function renderNutritionHistoryWeek() {
+      const calorieChart = document.getElementById('calorieWeeklyChart');
+      const proteinChart = document.getElementById('proteinWeeklyChart');
+      const label = document.getElementById('nutritionHistoryWeekLabel');
+      const nextBtn = document.getElementById('nutritionHistoryNextBtn');
+      if (!calorieChart || !proteinChart || !label) return;
+
+      const currentWeekStart = getWeekStart(new Date());
+      const weekStart = addDays(currentWeekStart, nutritionHistoryWeekOffset * 7);
+      const weekEnd = addDays(weekStart, 6);
+
+      const rows = [];
+      for (let i = 0; i < 7; i++) {
+        const date = addDays(weekStart, i);
+        const stamp = localDateStamp(date);
+        const totals = nutritionTotalsFromLog(getNutritionLogForDate(stamp));
+        rows.push({
+          date,
+          stamp,
+          calories: Math.round(totals.calories),
+          protein: round1(totals.protein)
+        });
+      }
+
+      const startLabel = weekStart.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const endLabel = weekEnd.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      label.innerText = nutritionHistoryWeekOffset === 0 ? `THIS WEEK • ${startLabel} – ${endLabel}` : `${startLabel} – ${endLabel}`;
+      if (nextBtn) nextBtn.disabled = nutritionHistoryWeekOffset >= 0;
+
+      renderWeeklyNutritionBars(calorieChart, rows, 'calories');
+      renderWeeklyNutritionBars(proteinChart, rows, 'protein');
+    }
+
+    function renderWeeklyNutritionBars(container, rows, metric) {
+      const values = rows.map(r => Number(r[metric]) || 0);
+      const maxValue = Math.max(...values, metric === 'calories' ? 500 : 25);
+
+      container.innerHTML = rows.map(row => {
+        const value = Number(row[metric]) || 0;
+        const height = value > 0 ? Math.max(3, Math.round((value / maxValue) * 100)) : 0;
+        const valueLabel = metric === 'calories' ? value.toLocaleString() : `${round1(value)}g`;
+        const dayLabel = row.date.toLocaleDateString('en-US', { weekday: 'short' });
+        const dateLabel = row.date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+
+        return `
+          <div class="weekly-bar-col" title="${dayLabel} ${dateLabel}: ${valueLabel}">
+            <div class="weekly-bar-value">${value > 0 ? valueLabel : '—'}</div>
+            <div class="weekly-bar-track">
+              <div class="weekly-bar-fill ${metric === 'protein' ? 'protein' : ''}" style="height:${height}%"></div>
+            </div>
+            <div class="weekly-bar-day">${dayLabel}</div>
+            <div class="weekly-bar-date">${dateLabel}</div>
+          </div>
+        `;
+      }).join('');
     }
 
     function saveMacroLog() {
@@ -2217,6 +3164,20 @@
 
     // INITIALIZE AUTH ON LOAD
     window.onload = function() {
+      const foodSearchInput = document.getElementById('foodSearchInput');
+      if (foodSearchInput) {
+        foodSearchInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') searchUsdaFoods();
+        });
+      }
+
+      autoArchivePastNutritionDays();
+      checkNutritionDateRollover();
+      updateNutritionDashboard();
+
+      // If the app remains open overnight, this detects the new date and archives the prior day.
+      setInterval(checkNutritionDateRollover, 60000);
+
       const storedUser = localStorage.getItem('schmokefit_bm_user');
       if (sessionStorage.getItem('schmokefit_bm_authenticated') === 'true' && storedUser) {
         unlockApp(storedUser);
